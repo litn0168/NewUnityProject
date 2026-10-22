@@ -53,8 +53,13 @@
 # --- Build outputs ---------------------------------------------------------
 *.apk
 *.aab
-*.unitypackage
 *.app
+
+# NOTE: `*.unitypackage` is deliberately NOT ignored.
+# Exported .unitypackage files are Git LFS-tracked in `.gitattributes`, so an
+# ignore rule here made that LFS configuration dead config. They are not
+# ignored any more, but must still be added deliberately by explicit path
+# only — never via `git add .`.
 
 # --- Crash / diagnostic reports -------------------------------------------
 crashlytics-build.properties
