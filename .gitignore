@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# Unity 6 project ignore rules.
+#
+# RULE: generated/machine-specific output must never be committed. Library/,
+# Temp/, Logs/ and UserSettings/ are produced locally by the Unity Editor and
+# contain absolute paths, caches and per-editor preferences. Committing them
+# bloats the repo, causes constant merge conflicts, and can break other
+# machines when Unity re-imports stale caches.
+#
+# What SHOULD be committed: Assets/, Packages/ (manifest + lock), ProjectSettings/,
+# .opencode/ (project agent config), Docs/, README.md, AGENTS.md, .gitignore,
+# .gitattributes, .github/.
+# `.vsconfig` is intentionally committed (shared Visual Studio component list).
+# ---------------------------------------------------------------------------
+
+# --- Unity generated folders ------------------------------------------------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/[Ee]xportedObj/
+
+# Asset Store tools / package cache artifacts
+/[Aa]ssets/[Aa]ssetStoreTools*
+/[Aa]ssets/[Pp]lugins/[Ee]ditor/*.dll.mdb
+
+# --- Visual Studio / Rider / VS Code / IntelliJ ----------------------------
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# --- Unity / Mono debug + build metadata -----------------------------------
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.svd
+*.tmp
+
+# --- Build outputs ---------------------------------------------------------
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# --- Crash / diagnostic reports -------------------------------------------
+crashlytics-build.properties
+sysinfo.txt
+
+# --- OS junk ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# --- Exception: .opencode/ is intentional project configuration ------------
+# Do NOT add .opencode/ here. Do NOT add Assets/ or Packages/manifest.json.
